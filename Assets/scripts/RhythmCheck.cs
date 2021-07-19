@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RhythmCheck : MonoBehaviour
 {
-    private Animation animation;
-    private bool firstStep;
-    private bool turn;
+    [SerializeField] private Animation animation;
+    [SerializeField] private bool firstStep;
+    [SerializeField] private bool turn;
     // Start is called before the first frame update
     void Start()
     {

@@ -5,10 +5,12 @@ using UnityEngine;
 public class LevelLoad : MonoBehaviour
 {
     public GameObject decor;
+    [SerializeField] private bool cloneable;
     // Start is called before the first frame update
     void Start()
     {
-
+        // init
+        cloneable = true;
     }
     IEnumerator Move()
     {
@@ -27,13 +29,15 @@ public class LevelLoad : MonoBehaviour
         {
             StartCoroutine(Move());
         }
-        Debug.Log(decor.transform.position.x);
-        if (decor.transform.position.x <= -153.3f)
+        
+        if (decor.transform.position.x <= -153.3f && cloneable)
         {
-            Vector3 pos = new Vector3(decor.transform.position.x + 124,
-                                      decor.transform.position.y,
-                                      decor.transform.position.z);
-            Instantiate(decor, pos, decor.transform.rotation);
+            Vector3 pos = new Vector3(decor.transform.position.x + 121,
+                                      -21.9f, -1.007f);
+            GameObject clone = Instantiate(decor, pos, decor.transform.rotation);
+            clone.transform.localScale = new Vector3(9.4824f, 9.4824f, 9.4824f);
+            cloneable = false;
+            this.decor = clone;
         }
     }
 }
