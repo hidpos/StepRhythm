@@ -5,12 +5,19 @@ using UnityEngine;
 public class LevelLoad : MonoBehaviour
 {
     public GameObject decor;
-    [SerializeField] private bool cloneable;
+    private List<GameObject> clones = new List<GameObject>();
+    private const float cloneScale = 9.4824f;
+    private enum CloneParams {
+        scale = 9,
+        y = -22,
+        z = -1,
+        offsetX = 121
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
-        // init
-        cloneable = true;
+        clones.Add(decor);
     }
     IEnumerator Move()
     {
@@ -30,14 +37,21 @@ public class LevelLoad : MonoBehaviour
             StartCoroutine(Move());
         }
         
-        if (decor.transform.position.x <= -153.3f && cloneable)
+        if (decor.transform.position.x <= -153.3f)
         {
-            Vector3 pos = new Vector3(decor.transform.position.x + 121,
-                                      -21.9f, -1.007f);
+            Vector3 pos = new Vector3(decor.transform.position.x + (int)CloneParams.offsetX, (int)CloneParams.y, (int)CloneParams.z);
+
             GameObject clone = Instantiate(decor, pos, decor.transform.rotation);
-            clone.transform.localScale = new Vector3(9.4824f, 9.4824f, 9.4824f);
-            cloneable = false;
+            clone.transform.localScale = new Vector3((int)CloneParams.scale, (int)CloneParams.scale, (int)CloneParams.scale);
+
             this.decor = clone;
+            clone.transform.parent = this.transform;
+            clones.Add(clone);
+
+            if (clones.Count >= 3)
+            {
+                Destroy(clones[clones.Count - 3].gameObject);
+            }
         }
     }
 }

@@ -1,41 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class RhythmCheck : MonoBehaviour
 {
-    [SerializeField] private Animation animation;
-    [SerializeField] private bool firstStep;
-    [SerializeField] private bool turn;
+    public GameObject notes;
+    public int bpm;
+    private List<Image> allNotes = new List<Image>();
+    public Text score, hitEffect, perfectHitEffect;
+
     // Start is called before the first frame update
     void Start()
     {
-        // init
-        animation = this.GetComponent<Animation>();
-        firstStep = true;
-        turn = true;
+        Image[] n = gameObject.GetComponentsInChildren<Image>();
+
+        for (var i = 0; i < n.Length; i++)
+        {
+            n[i].gameObject.AddComponent<Note>();
+
+            if (n[i].gameObject.name == "Image")
+                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, 2);
+            else
+                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, 1);
+
+            allNotes.Add(n[i]);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            if (firstStep) {
-                animation.Play("leg-step-start");
-                firstStep = false;
-            }
-            else
-            {
-                if (turn) {
-                    animation.Play("leg-step-left");
-                    turn = false;
-                }
-                else {
-                    animation.Play("leg-step-right");
-                    turn = true;
-                }
-            }
-        }
+        notes.transform.position -= new Vector3(bpm * Time.deltaTime * 3, 0);
     }
 }
