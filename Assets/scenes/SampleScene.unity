@@ -50897,7 +50897,6 @@ GameObject:
   - component: {fileID: 689559563}
   - component: {fileID: 689559562}
   - component: {fileID: 689559566}
-  - component: {fileID: 689559567}
   m_Layer: 5
   m_Name: gameplay-canvas
   m_TagString: Untagged
@@ -51004,24 +51003,6 @@ MonoBehaviour:
   score: {fileID: 2006840318}
   hitEffect: {fileID: 193482164}
   perfectHitEffect: {fileID: 1603784397}
---- !u!114 &689559567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 689559561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ed33cc1b3a81d142aa1ddab8d8c2560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  songBpm: 138
-  secPerBeat: 0
-  songPosition: 0
-  songPositionInBeats: 0
-  dspSongTime: 0
-  musicSource: {fileID: 1271709710}
 --- !u!1 &691275752
 GameObject:
   m_ObjectHideFlags: 0
@@ -92959,8 +92940,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c26a2cb7a431449429eff4ba45795750, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: f29671389bb186f438cd526943aed065, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -119992,7 +119973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183, y: -161.31042}
+  m_AnchoredPosition: {x: -419, y: -161.31042}
   m_SizeDelta: {x: 100, y: 127.3691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1639251417
@@ -126691,7 +126672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -183, y: -161.31042}
+  m_AnchoredPosition: {x: -419, y: -161.31042}
   m_SizeDelta: {x: 100, y: 127.3691}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1728567596

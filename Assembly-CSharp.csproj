@@ -40,7 +40,6 @@
      <Compile Include="Assets\scripts\LevelLoad.cs" />
      <Compile Include="Assets\scripts\MCController.cs" />
      <Compile Include="Assets\scripts\Note.cs" />
-     <Compile Include="Assets\scripts\Conductor.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Programs/Unity3D/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
