@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class RhythmCheck : MonoBehaviour
 {
     public GameObject notes;
-    public int bpm;
+    public int speed;     // 60bpm = 96;    138 = 220
     private List<Image> allNotes = new List<Image>();
     public Text score, hitEffect, perfectHitEffect;
 
@@ -30,6 +30,6 @@ public class RhythmCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        notes.transform.position -= new Vector3(bpm * Time.deltaTime * 3, 0);
+        notes.transform.position -= new Vector3(speed * Time.deltaTime * 3, 0);
     }
 }
