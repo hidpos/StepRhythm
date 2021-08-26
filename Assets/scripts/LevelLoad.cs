@@ -9,8 +9,8 @@ public class LevelLoad : MonoBehaviour
     private const float cloneScale = 9.4824f;
     private enum CloneParams {
         scale = 9,
-        y = -22.01,
-        z = -1.2,
+        y = -22,
+        z = -1,
         offsetX = 121
     }
     

@@ -7,7 +7,8 @@ public class RhythmCheck : MonoBehaviour
     public GameObject notes;
     public int speed;     // 60bpm = 96;    138 = 220
     private List<Image> allNotes = new List<Image>();
-    public Text score, hitEffect, perfectHitEffect;
+    public Text score, hitEffect, perfectHitEffect,
+    perfectHitEffect2;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,9 @@ public class RhythmCheck : MonoBehaviour
             n[i].gameObject.AddComponent<Note>();
 
             if (n[i].gameObject.name == "Image")
-                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, 2);
+                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, perfectHitEffect2, 2);
             else
-                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, 1);
+                n[i].GetComponent<Note>().Init(score, hitEffect, perfectHitEffect, perfectHitEffect2, 1);
 
             allNotes.Add(n[i]);
         }
