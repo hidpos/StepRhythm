@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{5ebd95a3-32e5-d243-0c95-cae8eb329f50}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.TestRunner", "UnityEngine.TestRunner.csproj", "{5c91faff-2a72-3e17-4e26-fe405b7b3d5d}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Timeline", "Unity.Timeline.csproj", "{3e336504-f670-89dc-30ae-3d60d815cd67}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEngine.UI", "UnityEngine.UI.csproj", "{5ebd95a3-32e5-d243-0c95-cae8eb329f50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.csproj", "{98a02956-d997-3f8a-5871-cd37eaf1637f}"
 EndProject
@@ -34,12 +34,12 @@ Global
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ebd95a3-32e5-d243-0c95-cae8eb329f50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ebd95a3-32e5-d243-0c95-cae8eb329f50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5c91faff-2a72-3e17-4e26-fe405b7b3d5d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5c91faff-2a72-3e17-4e26-fe405b7b3d5d}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3e336504-f670-89dc-30ae-3d60d815cd67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3e336504-f670-89dc-30ae-3d60d815cd67}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5ebd95a3-32e5-d243-0c95-cae8eb329f50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5ebd95a3-32e5-d243-0c95-cae8eb329f50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98a02956-d997-3f8a-5871-cd37eaf1637f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98a02956-d997-3f8a-5871-cd37eaf1637f}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53bffa18-6cbe-10fc-b699-927e7d2f0cb1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

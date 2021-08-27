@@ -39,28 +39,6 @@ public class Note : MonoBehaviour
             GetComponent<Image>().enabled = true;
     }
 
-    public void Step()
-    {
-            if (canBePressed)
-            {
-                int a = int.Parse(__score.text);
-
-                if (status == 1)
-                {
-                    __hitEffect.GetComponent<Animation>().Play();
-                    a += 100;
-                    __score.text = a.ToString();
-                    Destroy(this.gameObject);   
-                }
-                else
-                {
-                    __perfectHitEffect.GetComponent<Animation>().Play();
-                    a += 250;
-                    __score.text = a.ToString();
-                    Destroy(this.gameObject.transform.parent.gameObject);   
-                }
-            }  
-    }
     // Update is called once per frame
     void Update()
     {
