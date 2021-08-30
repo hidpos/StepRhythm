@@ -6,15 +6,19 @@ using UnityEngine.UI;
 public class Note : MonoBehaviour
 {
     public Text __score, __hitEffect, __perfectHitEffect, __perfectHitEffect2;
+    public RhythmCheck __rCheck;
     public int status;
     
-    private bool canBePressed;
+    public bool __canBePressed;
+    public bool __wasPressed;
 
-    public void Init(Text score, Text hitEffect, Text perfectHitEffect, Text perfectHitEffect2, int stat)
+    private int triggerExitCount = 0;
+
+    public void Init(RhythmCheck rCheck, Text score, Text hitEffect, Text perfectHitEffect, Text perfectHitEffect2, int stat)
     {
         __score = score;    __hitEffect = hitEffect;
         status = stat;   __perfectHitEffect = perfectHitEffect;
-        __perfectHitEffect2 = perfectHitEffect2;
+        __perfectHitEffect2 = perfectHitEffect2;    __rCheck = rCheck;
     }
 
     // Start is called before the first frame update
@@ -22,18 +26,30 @@ public class Note : MonoBehaviour
     {
         
     }
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "hit-line")
-            canBePressed = true;
-            
+            __canBePressed = true;
+
         if (other.gameObject.tag == "dead-zone")
             GetComponent<Image>().enabled = false;
     }
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "hit-line")
-            canBePressed = false; 
+        {
+            triggerExitCount++;
+            __canBePressed = false;
+            if (status == 1 && !__wasPressed && triggerExitCount != 1)
+            {
+                Note[] n = gameObject.GetComponentsInChildren<Note>();
+                if (n[0].__wasPressed == false)
+                {
+                    __rCheck.comboCount = 0;
+                }
+            }
+        }
 
         if (other.gameObject.tag == "dead-zone")
             GetComponent<Image>().enabled = true;
@@ -42,8 +58,10 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Input.anyKeyDown && canBePressed)
+            if (Input.anyKeyDown && __canBePressed)
             {
+                __wasPressed = true;
+                __rCheck.comboCount++;
                 int a = int.Parse(__score.text);
 
                 if (status == 1)
