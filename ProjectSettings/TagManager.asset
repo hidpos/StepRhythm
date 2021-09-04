@@ -6,6 +6,9 @@ TagManager:
   tags:
   - hit-line
   - dead-zone
+  - easy
+  - normal
+  - hard
   layers:
   - Default
   - TransparentFX

@@ -42,6 +42,7 @@
      <Compile Include="Assets\scripts\Note.cs" />
      <Compile Include="Assets\scripts\MainMenu.cs" />
      <Compile Include="Assets\scripts\CreateMap.cs" />
+     <Compile Include="Assets\scripts\LoadLevel.cs" />
      <None Include="Assets\models\boot\archibase.net.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Programs/Unity3D/2020.3.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class RhythmCheck : MonoBehaviour
 {
-    public GameObject notes;
+    public GameObject[] notes;
     public int speed; 
     public Text score, hitEffect, perfectHitEffect,
     perfectHitEffect2;
@@ -33,7 +33,10 @@ public class RhythmCheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        notes.transform.position -= new Vector3(speed * Time.deltaTime * 3, 0);
+        for (int i = 0; i < notes.Length; i++)
+        {
+            notes[i].transform.position -= new Vector3(speed * Time.deltaTime * 3, 0);
+        }
         comboC1.text = $"{comboCount} x";
         comboC2.text = $"{comboCount} x";
     }
