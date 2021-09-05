@@ -8,6 +8,7 @@ public class LoadLevel : MonoBehaviour
 {
     public GameObject mainMenu, game, system, songs;
     public MainMenu mMenu;
+    public RhythmCheck rythmCh;
     public string difficulty;
 
     // Start is called before the first frame update
@@ -19,6 +20,12 @@ public class LoadLevel : MonoBehaviour
     public void ChangeDifficulty()
     {
         difficulty = EventSystem.current.currentSelectedGameObject.tag;
+        switch (difficulty)
+        {
+            case "easy": rythmCh.speed = 100; break;
+            case "normal": rythmCh.speed = 300; break;
+            case "hard": rythmCh.speed = 500; break;
+        }
     }
 
     public void StartGame()
@@ -28,12 +35,11 @@ public class LoadLevel : MonoBehaviour
             if (child.name == mMenu.songName.text)
             {
                 child.gameObject.SetActive(true);
-                GameObject[] n = child.GetComponentsInChildren<GameObject>();
-
-                for (var j = 0; j < n.Length; j++)
+                
+                foreach (Transform child2 in child.transform)
                 {
-                   if (n[j].name == difficulty)
-                       n[j].SetActive(true);
+                    if (child2.name == difficulty)
+                        child2.gameObject.SetActive(true);
                 }
             }  
         }   
