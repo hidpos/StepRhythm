@@ -24,7 +24,7 @@ public class Note : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        __rCheck.notesAm += .5f;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -47,6 +47,7 @@ public class Note : MonoBehaviour
                 if (n[0].__wasPressed == false)
                 {
                     __rCheck.comboCount = 0;
+                    __rCheck.misses++;
                 }
             }
         }
@@ -73,6 +74,7 @@ public class Note : MonoBehaviour
                 }
                 else
                 {
+                    __rCheck.perfects++;
                     __perfectHitEffect.GetComponent<Animation>().Play();
                     __perfectHitEffect2.GetComponent<Animation>().Play();
                     a += 250;
